@@ -1,0 +1,32 @@
+{
+  "name": "chat-app",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build-scss": "node-sass ui/src/framework/main.scss ui/dist/main.css",
+    "watch-scss": "nodemon --watch ui/src -e scss -x \"npm run build-scss\"",
+    "build-jsx": "browserify ui/src/framework/main.jsx -o ui/dist/main.js -t [ babelify --presets [ @babel/preset-env @babel/preset-react ] --plugins [ @babel/plugin-proposal-class-properties ] ]",
+    "watch-jsx": "nodemon --watch ui/src -e jsx -x \"npm run build-jsx\"",
+    "build-html": "cp ui/src/framework/index.html ui/dist",
+    "watch-html": "nodemon --watch ui/src/framework -e html -x \"npm run build-html\"",
+    "build-server": "node app.js",
+    "watch-server": "nodemon --ignore ui/ --ignore node_modules/ -e js -x \"npm run build-server\"",
+    "build": "npm run build-jsx & npm run build-scss & npm run build-html & npm run build-server",
+    "watch": "npm run watch-jsx & npm run watch-scss & npm run watch-html & npm run watch-server"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "babelify": "^10.0.0",
+    "node-sass": "^4.13.1",
+    "nodemon": "^2.0.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
