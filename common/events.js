@@ -1,5 +1,7 @@
 module.exports = {
   connection: 'connection',
   connect: 'connect',
-  disconnect: 'disconnect'
+  disconnect: 'disconnect',
+
+  updateState: 'update_state'
 }
