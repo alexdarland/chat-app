@@ -6,7 +6,7 @@
     "build-scss": "node-sass ui/src/framework/main.scss ui/dist/main.css",
     "watch-scss": "nodemon --watch ui/src -e scss -x \"npm run build-scss\"",
     "build-jsx": "browserify ui/src/framework/main.jsx -o ui/dist/main.js -t [ babelify --presets [ @babel/preset-env @babel/preset-react ] --plugins [ @babel/plugin-proposal-class-properties ] ]",
-    "watch-jsx": "nodemon --watch ui/src -e jsx -x \"npm run build-jsx\"",
+    "watch-jsx": "nodemon --watch ui/src -e jsx,js -x \"npm run build-jsx\"",
     "build-html": "cp ui/src/framework/index.html ui/dist",
     "watch-html": "nodemon --watch ui/src/framework -e html -x \"npm run build-html\"",
     "build-server": "node app.js",
@@ -15,7 +15,8 @@
     "watch": "npm run watch-jsx & npm run watch-scss & npm run watch-html & npm run watch-server"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.3",
@@ -27,6 +28,7 @@
     "node-sass": "^4.13.1",
     "nodemon": "^2.0.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "socket.io-client": "^2.3.0"
   }
 }

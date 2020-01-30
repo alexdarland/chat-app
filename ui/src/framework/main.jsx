@@ -11,7 +11,7 @@ const APPS = {
 function initApp(el) {
   const App = APPS[el.getAttribute('data-react-app')]
   if (!App) return
-  ReactDOM.render(<App.entry name='there'/>, el)
+  ReactDOM.render(<App.entry/>, el)
 }
 
 const apps = document.querySelectorAll('[data-react-app]')
