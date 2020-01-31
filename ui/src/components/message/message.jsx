@@ -9,12 +9,12 @@ class Message extends React.Component {
   }
 
   render() {
-    const { user, time, text } = this.props.message
+    const { username, time, text } = this.props.message
 
     return (
       <li>
         <div>
-          <span>{user}</span>
+          <span>{username}</span>
           <span>{this.renderTime(time)}</span>
           <p>{text}</p>
         </div>
@@ -25,7 +25,7 @@ class Message extends React.Component {
 
 Message.propTypes = {
   message: PropTypes.shape({
-    user: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
     time: PropTypes.number.isRequired,
     text: PropTypes.string.isRequired
   })

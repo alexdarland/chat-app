@@ -1,7 +1,7 @@
 module.exports = {
   messages: [
     {
-      user: 'System',
+      username: 'System',
       time: Date.now(),
       text: 'Welcome to the Chat App!'
     }
