@@ -29,6 +29,7 @@ class ChatApp extends React.Component {
         this.setState(newObject)
       })
     }
+    window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
   }
 
   postMessage(text) {
@@ -39,7 +40,7 @@ class ChatApp extends React.Component {
     return (
       <div>
         {/*{this.state.isConnected ? 'Connected' : 'Disconnected'}*/}
-        <Header username={this.state.username} />
+        <Header username={this.state.username} updateState={this.updateState.bind(this)}/>
         <MessageList messages={this.state.messages}/>
         <ChatInput postMessage={this.postMessage.bind(this)}/>
       </div>

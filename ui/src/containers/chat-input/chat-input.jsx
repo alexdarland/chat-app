@@ -5,7 +5,7 @@ const Icon = require('../../components/icon/icon.jsx')
 class ChatInput extends React.Component {
   constructor(props) {
     super(props)
-    this.inputReference = React.createRef();
+    this.inputReference = React.createRef()
 
     this.state = {
       message: ''
