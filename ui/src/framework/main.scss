@@ -1,3 +1,12 @@
 @import
-"../core/scss/colors",
-"../core/scss/scaffolding";
+"../core/scss/base/colors",
+"../core/scss/base/scaffolding";
+
+@import
+"../components/icon/icon",
+"../components/message/message",
+"../components/message-list/message-list";
+
+@import
+"../containers/chat-input/chat-input",
+"../containers/header/header";

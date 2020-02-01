@@ -1,5 +1,6 @@
 const React = require('react')
 const PropTypes = require('prop-types')
+const Icon = require('../../components/icon/icon.jsx')
 
 class ChatInput extends React.Component {
   constructor(props) {
@@ -31,9 +32,11 @@ class ChatInput extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleFormSubmit}>
-        <input name="chat-input" type='text' autoComplete='off' onChange={this.handleInputChange} ref={this.inputReference}/>
-        <input type="submit" value="Send"/>
+      <form className='chat-input' onSubmit={this.handleFormSubmit}>
+        <input className='chat-input__text-box' name="chat-input" type='text' autoComplete='off' placeholder='Aa' onChange={this.handleInputChange} ref={this.inputReference}/>
+        <button className='chat-input__submit' type='submit'>
+          <Icon name='paper-plane'/>
+        </button>
       </form>
     )
   }

@@ -1,5 +1,6 @@
 const React = require('react')
 const PropTypes = require('prop-types')
+const moment = require('moment')
 
 class Message extends React.Component {
 
@@ -12,13 +13,13 @@ class Message extends React.Component {
     const { username, time, text } = this.props.message
 
     return (
-      <li>
-        <div>
+      <div className='message'>
+        <div className='message__info'>
           <span>{username}</span>
-          <span>{this.renderTime(time)}</span>
-          <p>{text}</p>
+          <span>{moment(time).calendar()}</span>
         </div>
-      </li>
+        <p className='message__text'>{text}</p>
+      </div>
     )
   }
 }

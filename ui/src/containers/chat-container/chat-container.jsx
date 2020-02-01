@@ -1,7 +1,8 @@
 const React = require('react')
 const Connector = require('../../core/js/connector.js')
-const Message = require('../../components/message/message.jsx')
 const ChatInput = require('../chat-input/chat-input.jsx')
+const Header = require('../header/header.jsx')
+const MessageList = require('../../components/message-list/message-list.jsx')
 
 class ChatApp extends React.Component {
 
@@ -37,11 +38,9 @@ class ChatApp extends React.Component {
   render() {
     return (
       <div>
-        {this.state.isConnected ? 'Connected' : 'Disconnected'}
-        <h2>Messages</h2>
-        <ul>
-          { this.state.messages.map((message, id) => { return <Message key={id} message={message} /> }) }
-        </ul>
+        {/*{this.state.isConnected ? 'Connected' : 'Disconnected'}*/}
+        <Header username={this.state.username} />
+        <MessageList messages={this.state.messages}/>
         <ChatInput postMessage={this.postMessage.bind(this)}/>
       </div>
     )

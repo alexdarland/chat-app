@@ -1,6 +1,6 @@
-import React from "react";
-import ReactDOM from 'react-dom'
-import ChatApp from '../containers/chat-container/chat-container.jsx'
+const React = require('react')
+const ReactDOM = require('react-dom')
+const ChatApp = require('../containers/chat-container/chat-container.jsx')
 
 const APPS = {
   ChatApp: {

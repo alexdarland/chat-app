@@ -1,0 +1,26 @@
+.message {
+  background: $color-panel;
+  border-radius: 14px;
+  padding: 10px 15px;
+  width: calc(100% - 30px);
+
+  >:first-child {
+    margin-top: 0;
+  }
+
+  >:last-child {
+    margin-bottom: 0;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  &__text {
+    margin-top: 5px;
+  }
+}

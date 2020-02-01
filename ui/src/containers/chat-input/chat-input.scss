@@ -1,0 +1,33 @@
+.chat-input {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: $color-light;
+  left: 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+
+  &__text-box {
+    width: 70%;
+    height: 40px;
+    font-size: 16px;
+    padding: 0 15px;
+    border-radius: 20px;
+    border: none;
+    background: $color-panel;
+    flex: 1;
+  }
+
+  &__submit {
+    background: none;
+    color: $color-primary;
+    border: none;
+    height: 40px;
+    vertical-align: top;
+    width: 15%;
+    font-size: 25px;
+    padding: 0 10px;
+    text-align: right;
+  }
+}
