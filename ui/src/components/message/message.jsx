@@ -5,10 +5,10 @@ const moment = require('moment')
 class Message extends React.Component {
 
   render() {
-    const { username, time, text } = this.props.message
-
+    const { id, username, time, text } = this.props.message
+    const messageClass = `message${ id === localStorage.getItem('id') ? ' message--own' : '' }`
     return (
-      <div className='message'>
+      <div className={messageClass}>
         <div className='message__info'>
           <span>{username}</span>
           <span>{moment(time).calendar()}</span>

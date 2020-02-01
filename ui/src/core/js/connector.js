@@ -36,8 +36,8 @@ Connector.prototype = {
     }, false)
   },
 
-  postMessage(username, text) {
-    this.socket.emit(events.sendMessage, { username, text })
+  postMessage(id, username, text) {
+    this.socket.emit(events.sendMessage, { id, username, text })
   },
 
 

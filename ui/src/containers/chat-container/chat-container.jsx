@@ -3,6 +3,7 @@ const Connector = require('../../core/js/connector.js')
 const ChatInput = require('../chat-input/chat-input.jsx')
 const Header = require('../header/header.jsx')
 const MessageList = require('../../components/message-list/message-list.jsx')
+const idGenerator = require('../../../../common/id-generator')
 
 class ChatApp extends React.Component {
 
@@ -11,6 +12,7 @@ class ChatApp extends React.Component {
 
     this.state = {
       username: localStorage.getItem('username') || 'Anonymous',
+      id: localStorage.getItem('id') || idGenerator.generateId(),
       isConnected: false,
       messages: [],
       connector: new Connector(this.updateState.bind(this))
@@ -33,7 +35,7 @@ class ChatApp extends React.Component {
   }
 
   postMessage(text) {
-    this.state.connector.postMessage(this.state.username, text)
+    this.state.connector.postMessage(this.state.id, this.state.username, text)
   }
 
   render() {

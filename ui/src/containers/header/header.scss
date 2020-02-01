@@ -4,23 +4,36 @@
   left: 0;
   top: 0;
   width: 100%;
-  background: $color-dark;
-  color: $color-light;
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
 
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  background: rgba(255,255,255,.8);
+  color: $color-dark;
+
+  &__item {
+    flex: 1;
+    text-align: center;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
   &__logo {
     font-size: 18px;
   }
 
   &__button {
-    color: $color-light;
+    color: $color-dark;
     border: none;
     background: none;
     font-size: 14px;
+    font-weight: bold;
     padding: 0;
     cursor: pointer;
   }

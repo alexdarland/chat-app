@@ -64,10 +64,15 @@ class Header extends React.Component {
     return (
       <>
         <header className='header'>
-          <h1 className='header__logo'>Chat app</h1>
-          <button className='header__button' onClick={() => { this.openMenu(!this.state.menuIsActive) }}>
-            {this.props.username} <Icon name='cog' middle='true'/>
-          </button>
+          <div className='header__item'></div>
+          <div className='header__item'>
+            <h1 className='header__logo'>Chat app</h1>
+          </div>
+          <div className='header__item'>
+            <button className='header__button' onClick={() => { this.openMenu(!this.state.menuIsActive) }}>
+              {this.props.username} <Icon name='cog' middle='true'/>
+            </button>
+          </div>
         </header>
         <aside className={menuClass}>
           <div className='header__menu-section'>

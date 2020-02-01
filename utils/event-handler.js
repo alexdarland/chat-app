@@ -13,6 +13,7 @@ const RequestHandler = function(io, socket) {
 RequestHandler.prototype = {
   handleSendMessage(payload) {
     const message = {
+      id: payload.id,
       username: payload.username,
       time: Date.now(),
       text: payload.text
