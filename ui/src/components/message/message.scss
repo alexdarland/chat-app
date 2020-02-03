@@ -4,6 +4,16 @@
   padding: 10px 15px;
   margin-right: 30px;
 
+  &--first,
+  &--middle {
+    border-bottom-left-radius: 0;
+  }
+
+  &--last,
+  &--middle {
+    border-top-left-radius: 0;
+  }
+
   &--own {
     background: $color-primary;
     color: $color-light;

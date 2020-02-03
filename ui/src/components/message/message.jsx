@@ -6,7 +6,8 @@ class Message extends React.Component {
 
   render() {
     const { id, username, time, text } = this.props.message
-    const messageClass = `message${ id === localStorage.getItem('id') ? ' message--own' : '' }`
+    const messageClass = `message${ id === localStorage.getItem('id') ? ' message--own' : '' }${ this.props.modifier ? ' message--' + this.props.modifier : '' }`
+
     return (
       <div className={messageClass}>
         <div className='message__info'>
@@ -24,7 +25,8 @@ Message.propTypes = {
     username: PropTypes.string.isRequired,
     time: PropTypes.number.isRequired,
     text: PropTypes.string.isRequired
-  })
+  }),
+  modifier: PropTypes.string.isRequired
 }
 
 module.exports = Message
