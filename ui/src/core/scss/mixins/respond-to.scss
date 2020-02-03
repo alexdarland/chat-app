@@ -1,0 +1,120 @@
+@mixin phone-only() {
+  @media (max-width: map_get($breakpoints, mobile) - 1) {
+    @content;
+  }
+}
+
+@mixin tablet-portrait-only() {
+  @media (min-width: map_get($breakpoints, mobile)) and (max-width: map_get($breakpoints, tablet-portrait) - 1) {
+    @content;
+  }
+}
+
+@mixin tablet-portrait-up() {
+  @media (min-width: map_get($breakpoints, mobile)) {
+    @content;
+  }
+}
+
+@mixin tablet-portrait-down() {
+  @media (max-width: map_get($breakpoints, tablet-portrait) - 1) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape-only() {
+  @media (min-width:  map_get($breakpoints, tablet-portrait)) and (max-width: map_get($breakpoints, tablet-landscape) - 1) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape-up() {
+  @media (min-width: map_get($breakpoints, tablet-portrait)) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape-down() {
+  @media (max-width: map_get($breakpoints, tablet-landscape) - 1) {
+    @content;
+  }
+}
+
+@mixin desktop-only() {
+  @media (min-width: map_get($breakpoints, tablet-landscape)) and (max-width: map_get($breakpoints, desktop) - 1) {
+    @content;
+  }
+}
+
+@mixin desktop-up() {
+  @media (min-width: map_get($breakpoints, tablet-landscape)) {
+    @content;
+  }
+}
+
+@mixin desktop-down() {
+  @media (max-width: map_get($breakpoints, desktop) - 1) {
+    @content;
+  }
+}
+
+@mixin desktop-large-only() {
+  @media (min-width: map_get($breakpoints, desktop)) {
+    @content;
+  }
+}
+
+@mixin respond-between($media1, $media2) {
+
+  $media1Index: getIndex($breakpoints, $media1);
+  $media2Index: getIndex($breakpoints, $media2);
+
+  @if $media1Index == 1 or $media1Index == null or $media2Index == null {
+    @warn 'Value 1: ' + $media1 + ', Value 2: ' + $media2 '. Please use dedicated mixins for phone or desktop-large!';
+  } @else {
+    $media1Value: map_get($breakpoints, $media1);
+    $media2Value: map_get($breakpoints, $media2);
+
+    @if ($media1Value < $media2Value) {
+      $previousValue: nth(map_values($breakpoints), $media1Index - 1);
+      @media (min-width: $previousValue) and (max-width: $media2Value - 1) {
+        @content;
+      }
+    } @else {
+      $previousValue: nth(map_values($breakpoints), $media2Index - 1);
+      @media (min-width: $previousValue) and (max-width: $media1Value - 1) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin respond-to-min($screenWidth) {
+  @media (min-width: $screenWidth) {
+    @content;
+  }
+}
+
+@mixin respond-to-max($screenWidth) {
+  @media (max-width: $screenWidth) {
+    @content;
+  }
+}
+
+@mixin respond-to-height-min($screenHeight) {
+  @media (min-height: $screenHeight) {
+    @content;
+  }
+}
+
+@mixin respond-to-height-max($screenHeight) {
+  @media (max-height: $screenHeight) {
+    @content;
+  }
+}
+
+@mixin respond-to-ie11() {
+  @media all and (-ms-high-contrast:none) {
+    @content;
+  }
+}

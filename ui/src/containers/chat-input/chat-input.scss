@@ -8,6 +8,10 @@
   display: flex;
   justify-content: space-between;
 
+  @include desktop-up {
+    width: calc(100% - 400px);
+  }
+
   &__text-box {
     width: 70%;
     height: 40px;

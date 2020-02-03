@@ -40,12 +40,12 @@ class ChatApp extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         {/*{this.state.isConnected ? 'Connected' : 'Disconnected'}*/}
         <Header username={this.state.username} updateState={this.updateState.bind(this)}/>
         <MessageList messages={this.state.messages}/>
         <ChatInput postMessage={this.postMessage.bind(this)}/>
-      </div>
+      </>
     )
   }
 }

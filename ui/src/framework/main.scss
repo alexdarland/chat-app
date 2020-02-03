@@ -1,5 +1,11 @@
 @import
-"../core/scss/base/colors",
+"../core/scss/variables/breakpoints",
+"../core/scss/variables/colors";
+
+@import
+"../core/scss/mixins/respond-to";
+
+@import
 "../core/scss/base/scaffolding";
 
 @import
